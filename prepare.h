@@ -1,0 +1,2 @@
+
+int createResourceFile(LPCTSTR iniFileName);

@@ -5,8 +5,8 @@ CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
 RES      = obj/Bat2Exe_private.res
-OBJ      = obj/main.o $(RES)
-LINKOBJ  = obj/main.o $(RES)
+OBJ      = obj/main.o obj/tstring.o obj/prepare.o $(RES)
+LINKOBJ  = obj/main.o obj/tstring.o obj/prepare.o $(RES)
 LIBS     = -L"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib" -L"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -27,6 +27,12 @@ $(BIN): $(OBJ)
 
 obj/main.o: main.cpp
 	$(CPP) -c main.cpp -o obj/main.o $(CXXFLAGS)
+
+obj/tstring.o: tstring.cpp
+	$(CPP) -c tstring.cpp -o obj/tstring.o $(CXXFLAGS)
+
+obj/prepare.o: prepare.cpp
+	$(CPP) -c prepare.cpp -o obj/prepare.o $(CXXFLAGS)
 
 obj/Bat2Exe_private.res: Bat2Exe_private.rc 
 	$(WINDRES) -i Bat2Exe_private.rc --input-format=rc -o obj/Bat2Exe_private.res -O coff 
