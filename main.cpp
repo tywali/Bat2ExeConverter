@@ -175,9 +175,13 @@ int createBatExe() {
 
 int main(int argc, char *argv[]) {
 	createIncludeFile("example.bat");
+	CopyFile("template/Bat2Exe_private.rc", "compile/Bat2Exe_private.rc", false);
+	CopyFile("template/main.cpp", "compile/main.cpp", false);
+	CopyFile("template/Bat2Exe.ico", "compile/Bat2Exe.ico", false);
+	DeleteFile("compile/obj/main.o");
+	createResourceFile("./compile.ini");
 	createBatExe();
 	
-	createResourceFile("./compile.ini");
 	return 0;
 }
 
