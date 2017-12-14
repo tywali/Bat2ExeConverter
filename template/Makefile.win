@@ -1,18 +1,18 @@
 # Project: ÏîÄ¿1
 # Makefile created by Dev-C++ 5.11
 
-CPP      = g++.exe -D__DEBUG__
-CC       = gcc.exe -D__DEBUG__
+CPP      = g++.exe
+CC       = gcc.exe
 WINDRES  = windres.exe
 RES      = obj/Bat2Exe_private.res
-OBJ      = obj/main.o obj/tstring.o obj/prepare.o obj/compile.o $(RES)
-LINKOBJ  = obj/main.o obj/tstring.o obj/prepare.o obj/compile.o $(RES)
-LIBS     = -L"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib" -L"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+OBJ      = obj/main.o $(RES)
+LINKOBJ  = obj/main.o $(RES)
+LIBS     = -L"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib" -L"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Rainman/Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = Bat2Exe.exe
-CXXFLAGS = $(CXXINCS) -g3
-CFLAGS   = $(INCS) -g3
+BIN      = exe/Bat2Exe.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
@@ -27,15 +27,6 @@ $(BIN): $(OBJ)
 
 obj/main.o: main.cpp
 	$(CPP) -c main.cpp -o obj/main.o $(CXXFLAGS)
-
-obj/tstring.o: tstring.cpp
-	$(CPP) -c tstring.cpp -o obj/tstring.o $(CXXFLAGS)
-
-obj/prepare.o: prepare.cpp
-	$(CPP) -c prepare.cpp -o obj/prepare.o $(CXXFLAGS)
-
-obj/compile.o: compile.cpp
-	$(CPP) -c compile.cpp -o obj/compile.o $(CXXFLAGS)
 
 obj/Bat2Exe_private.res: Bat2Exe_private.rc 
 	$(WINDRES) -i Bat2Exe_private.rc --input-format=rc -o obj/Bat2Exe_private.res -O coff 

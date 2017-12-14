@@ -20,13 +20,13 @@ FILETYPE VFT_APP
     {
       VALUE "CompanyName", "BeyondClass"
       VALUE "FileVersion", "2.0.0.0"
-      VALUE "FileDescription", "FileDescription_EXE"
-      VALUE "InternalName", "InternalName_EXE"
-      VALUE "LegalCopyright", "LegalCopyright_EXE"
-      VALUE "LegalTrademarks", "LegalTrademarks_EXE"
-      VALUE "OriginalFilename", "OriginalFilename_EXE"
-      VALUE "ProductName", "ProductName_EXE"
-      VALUE "ProductVersion", "ProductVersion_EXE"
+      VALUE "FileDescription", "FileDescription"
+      VALUE "InternalName", "InternalName"
+      VALUE "LegalCopyright", "LegalCopyright"
+      VALUE "LegalTrademarks", "LegalTrademarks"
+      VALUE "OriginalFilename", "OriginalFilename"
+      VALUE "ProductName", "ProductName"
+      VALUE "ProductVersion", "2.0.0.0"
     }
   }
   BLOCK "VarFileInfo"
