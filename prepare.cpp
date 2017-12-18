@@ -25,7 +25,6 @@ int createIncludeFile(LPCSTR batFileName) {
 	
 	HANDLE hBat = CreateFile(batFileName, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_FLAG_SEQUENTIAL_SCAN, NULL);
 	ReadFile(hBat, chBuf, BUFSIZE, &dwRead, NULL);
-	//printf("%s", chBuf);
 	
 	HANDLE hInc = CreateFile("compile\\batcmd.h", GENERIC_WRITE, FILE_SHARE_WRITE, NULL, CREATE_ALWAYS, FILE_FLAG_SEQUENTIAL_SCAN, NULL);
 	pDes = strrepl(chBuf, chReplBuf, sizeof(chReplBuf), "\r\n", "\\n\"\r\n\"");
@@ -34,6 +33,24 @@ int createIncludeFile(LPCSTR batFileName) {
 	
 	CloseHandle(hBat);
 	CloseHandle(hInc);
+	
+	return 0;
+}
+
+int createCompileIni(LPCSTR batFileName) {
+	CHAR chBuf[BUFSIZE], chFileBuf[BUFSIZE * 2];
+	CHAR iniFileName[] = "./compile.ini";
+	CHAR *pos; 
+	
+	ZeroMemory(chBuf, sizeof(chBuf));
+	ZeroMemory(chFileBuf, sizeof(chFileBuf));
+	GetPrivateProfileString("info", "OutputFile", "", chBuf, BUFSIZE, iniFileName);
+	if (strlen(chBuf) == 0) {
+		pos = strrchr(batFileName, '.');
+		strncpy(chFileBuf, batFileName, pos - batFileName);
+		sprintf(chBuf, "%s.exe", chFileBuf);
+		WritePrivateProfileString("info", "OutputFile", chBuf, iniFileName);
+	}
 	
 	return 0;
 }
@@ -123,5 +140,6 @@ int afterCompile(LPCTSTR iniFileName) {
 	GetPrivateProfileString("info", "OutputFile", "Bat2Exe.exe", chBuf, BUFSIZE, iniFileName);
 	sprintf(chCmd, "cmd.exe /c copy compile\\exe\\Bat2Exe.exe %s /Y", chBuf);
 	system(chCmd);
+	WritePrivateProfileString("info", "OutputFile", "", iniFileName);
 }
 

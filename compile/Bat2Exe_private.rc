@@ -20,12 +20,12 @@ FILETYPE VFT_APP
     {
       VALUE "CompanyName", "BeyondClass"
       VALUE "FileVersion", "2.0.0.0"
-      VALUE "FileDescription", "FileDescription"
-      VALUE "InternalName", "InternalName"
-      VALUE "LegalCopyright", "LegalCopyright"
-      VALUE "LegalTrademarks", "LegalTrademarks"
-      VALUE "OriginalFilename", "OriginalFilename"
-      VALUE "ProductName", "ProductName"
+      VALUE "FileDescription", ""
+      VALUE "InternalName", ""
+      VALUE "LegalCopyright", ""
+      VALUE "LegalTrademarks", ""
+      VALUE "OriginalFilename", ""
+      VALUE "ProductName", ""
       VALUE "ProductVersion", "2.0.0.0"
     }
   }
