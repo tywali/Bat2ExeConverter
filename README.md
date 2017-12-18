@@ -1,4 +1,8 @@
 # Bat2ExeConverter
 Convert bat file to exe.
 
-Not finished.
+## Usage
+Run cmd:
+~~~
+Bat2Exe.exe example.bat
+~~~
