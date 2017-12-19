@@ -1,3 +1,14 @@
 /obj
 /compile/obj
 /example.exe
+/bin/compile/exe/Bat2Exe.exe
+/bin/compile/obj/Bat2Exe_private.res
+/bin/compile/obj/main.o
+/bin/compile/Bat2Exe.ico
+/bin/compile/Bat2Exe_private.rc
+/bin/compile/batcmd.h
+/bin/compile/main.cpp
+/bin/compile/Makefile.win
+/src/obj
+/src/compile
+/bin/example.exe
