@@ -5,19 +5,19 @@
 #define BAT2EXE_PRIVATE_H
 
 /* VERSION DEFINITIONS */
-#define VER_STRING	"1.0.0.80"
+#define VER_STRING	"1.0.0.81"
 #define VER_MAJOR	1
 #define VER_MINOR	0
 #define VER_RELEASE	0
-#define VER_BUILD	80
+#define VER_BUILD	81
 #define COMPANY_NAME	""
-#define FILE_VERSION	"1.0.0.80"
+#define FILE_VERSION	"1.0.0.81"
 #define FILE_DESCRIPTION	"Developed using the Dev-C++ IDE"
 #define INTERNAL_NAME	""
 #define LEGAL_COPYRIGHT	""
 #define LEGAL_TRADEMARKS	""
 #define ORIGINAL_FILENAME	""
 #define PRODUCT_NAME	""
-#define PRODUCT_VERSION	"1.0.0.80"
+#define PRODUCT_VERSION	"1.0.0.81"
 
 #endif /*BAT2EXE_PRIVATE_H*/
