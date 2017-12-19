@@ -1,6 +1,14 @@
 # Bat2ExeConverter
 Convert bat file to exe.
 
+## Installation
+### Step 1
+Download MinGW 64bit, you can get it by downloading DevCpp from https://sourceforge.net/projects/orwelldevcpp/. 
+### Step 2
+If you downloaded DevCpp, you can find the folder "MinGW64" in DevCpp installation folder, then add "MinGW64\bin" to system environment variable PATH, such as "C:\Rainman\Dev-Cpp 5.11 TDM-GCC x64 4.9.2 Portable\Dev-Cpp\MinGW64\bin".
+### Step 3
+Download the bin folder to your local computer.
+
 ## Usage
 Run cmd:
 ~~~
